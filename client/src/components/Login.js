@@ -15,9 +15,7 @@ const Login = () => {
         .post('/api/login', { username: credentials.username, password: credentials.password })
         .then (res => {
             localStorage.setItem('token', res.data.payload);
-            console.log(res.data.payload);
             window.location.href = 'http://localhost:3000/bubblepage';
-
         })
         .catch(err => {
             console.log(err);
