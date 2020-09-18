@@ -139,12 +139,12 @@ app.put("/api/colors/:id", authenticator, (req, res) => {
       .send("Make sure your request body has all the fields it needs");
   }
   colors = colors.map(color => {
-    if (`${color.id}` === req.params.id) {
+    if (color.id === req.body.id) {
       return req.body;
     }
     return color;
   });
-  res.status(200).send(req.body);
+  res.status(200).send(colors);
 });
 
 app.delete("/api/colors/:id", authenticator, (req, res) => {
