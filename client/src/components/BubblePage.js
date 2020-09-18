@@ -17,6 +17,7 @@ const BubblePage = () => {
       .catch(err => {
         console.log(err);
       })
+    setEdited(false)
   },[edited])
 
   return (
